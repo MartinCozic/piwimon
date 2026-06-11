@@ -1,0 +1,85 @@
+/* =====================================================
+   GRILLES ET ALBUMS (index.tpl, thumbnails.tpl)
+   ===================================================== */
+
+/* --- Grille des miniatures (Photos) --- */
+ul.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  list-style: none;
+}
+
+ul.thumbnails li {
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+  height: fit-content;
+}
+
+ul.thumbnails li:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0 var(--border-color);
+}
+
+ul.thumbnails img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 3px solid var(--border-color);
+  flex-grow: 1;
+  object-fit: cover;
+}
+
+ul.thumbnails .thumbInfo { padding: 1rem; background-color: var(--surface-color); text-align: center; }
+ul.thumbnails .thumbName { display: block; font-weight: 800; font-size: 1.1rem; color: var(--text-color); margin-bottom: 0.3rem; }
+
+.thumbMeta { display: inline-block; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+.thumbMeta.fav { color: var(--secondary-color); }
+.thumb-select { padding: 0.3rem; text-align: center; }
+
+/* --- Grille d'albums (Catégories) --- */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.album-card {
+  background: var(--surface-color);
+  border: 3px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--border-color);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.album-card:hover { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--border-color); }
+.album-card a { color: var(--text-color); display: block; }
+
+.album-thumb img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-bottom: 3px solid var(--border-color);
+  display: block;
+}
+.album-thumb-placeholder {
+  width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 3rem; background: var(--bg-color); border-bottom: 3px solid var(--border-color);
+}
+
+.album-info { padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.album-name { font-weight: 800; font-size: 1rem; }
+.album-desc { font-size: 0.8rem; color: var(--text-muted); }
+
+.album-dates {
+  font-size: 1rem;
+  color: var(--text-between);
+}

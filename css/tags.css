@@ -1,0 +1,48 @@
+/* =====================================================
+   PAGE DES TAGS (tags.tpl)
+   ===================================================== */
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 1.5rem 0;
+}
+
+.tag-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--surface-color);
+  border: 3px solid var(--border-color);
+  border-radius: 25px;
+  padding: 0.6rem 1.2rem;
+  color: var(--text-color);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--border-color);
+  transition: all 0.1s ease;
+}
+
+.tag-item:hover {
+  background-color: var(--secondary-color);
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--border-color);
+  color: var(--text-color);
+}
+
+.tag-counter {
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+/* Variations de tailles natives de Piwigo (selon le nombre de photos par tag) */
+.tag-level-1 { font-size: 0.9rem; }
+.tag-level-2 { font-size: 1rem; }
+.tag-level-3 { font-size: 1.15rem; }
+.tag-level-4 { font-size: 1.3rem; }
+.tag-level-5 { font-size: 1.5rem; }
