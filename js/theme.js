@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Theme chargé avec succès.');
+    console.log('Theme loaded successfully.');
 
-    // Logique du Modal de Recherche
+    // Search Modal Logic
     const openBtn = document.getElementById('openSearchBtn');
     const closeBtn = document.getElementById('closeSearchBtn');
     const modal = document.getElementById('searchModal');
@@ -10,17 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
         openBtn.addEventListener('click', (e) => {
             e.preventDefault();
             modal.classList.remove('hidden');
-            document.getElementById('q').focus(); // Place le curseur direct dans la barre !
+            document.getElementById('q').focus(); // Places the cursor directly in the search bar!
         });
         closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
         modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.add('hidden'); });
     }
 
     // ==============================================================
-    // ASTUCE : SAUVEGARDE ET AFFICHAGE DU TERME DE RECHERCHE
+    // TIP: SAVE AND DISPLAY SEARCH TERM
     // ==============================================================
     
-    // 1. Intercepter la recherche pour mémoriser le mot tapé
+    // 1. Intercept search to memorize the typed word
     const searchForms = document.querySelectorAll('.search-form');
     searchForms.forEach(form => {
         form.addEventListener('submit', () => {
@@ -31,20 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Si on atterrit sur une page de résultats, on récupère et affiche le mot !
+    // 2. If we land on a results page, retrieve and display the word!
     if (window.location.href.includes('search')) {
         const lastSearch = sessionStorage.getItem('piwimon_last_search');
         if (lastSearch) {
-            // Ajouter le mot sous le titre principal
+            // Add the word under the main title
             const titrePage = document.querySelector('.titrePage');
             if (titrePage) {
-                titrePage.insertAdjacentHTML('beforeend', '<div style="font-size: 1rem; font-weight: bold; margin-top: 0.5rem; margin-bottom: 1rem; color: var(--text-muted);"><span class="material-symbols-outlined" style="font-size:1.1em;">arrow_right</span> Recherche pour : <span style="color: var(--primary-color);">"' + lastSearch + '"</span></div>');
+                const searchForText = (typeof PIWIMON_LANG !== 'undefined') ? PIWIMON_LANG.searchFor : 'Recherche pour :';
+                titrePage.insertAdjacentHTML('beforeend', '<div style="font-size: 1rem; font-weight: bold; margin-top: 0.5rem; margin-bottom: 1rem; color: var(--text-muted);"><span class="material-symbols-outlined" style="font-size:1.1em;">arrow_right</span> ' + searchForText + ' <span style="color: var(--primary-color);">"' + lastSearch + '"</span></div>');
             }
 
-            // Remplacer le texte générique "Aucun résultat..." si la recherche est vide
+            // Replace the generic "No results..." text if the search is empty
             const emptyMessage = document.querySelector('.empty-gallery p');
             if (emptyMessage) {
-                emptyMessage.innerHTML = 'Aucun résultat n\'a été trouvé pour : <strong style="color: var(--primary-color);">"' + lastSearch + '"</strong>';
+                const noResultsText = (typeof PIWIMON_LANG !== 'undefined') ? PIWIMON_LANG.noResults : 'Aucun résultat n\'a été trouvé pour :';
+                emptyMessage.innerHTML = noResultsText + ' <strong style="color: var(--primary-color);">"' + lastSearch + '"</strong>';
             }
         }
     }

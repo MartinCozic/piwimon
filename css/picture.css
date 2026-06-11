@@ -1,5 +1,5 @@
 /* =====================================================
-   PAGE PHOTO (picture.tpl)
+   PICTURE PAGE (picture.tpl)
    ===================================================== */
 
 #imageHeaderBar { margin-bottom: 1.5rem; }
@@ -21,7 +21,7 @@
   box-shadow: 4px 4px 0 var(--border-color);
 }
 
-/* --- Barre de navigation précédent/suivant --- */
+/* --- Previous/next navigation bar --- */
 .picture-navbar {
   display: flex;
   justify-content: space-between;
@@ -47,7 +47,7 @@
 .nav-btn--album:hover { background: var(--primary-color); color: #fff; }
 .nav-btn--disabled { opacity: 0.4; cursor: default; box-shadow: none; }
 
-/* --- En-tête photo (titre + actions) --- */
+/* --- Picture header (title + actions) --- */
 .picture-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0 1rem; }
 .picture-title { font-size: 1.5rem; font-weight: 900; margin: 0; }
 
@@ -69,7 +69,7 @@
 .action-btn--dl  { background: var(--accent-color); color: #fff; }
 .action-btn--dl:hover { color: #fff; }
 
-/* --- Description photo --- */
+/* --- Picture description --- */
 .picture-description {
   background: var(--bg-color);
   border: 3px solid var(--border-color);
@@ -80,7 +80,7 @@
   overflow-wrap: break-word;
 }
 
-/* --- Fiche Pokédex --- */
+/* --- Pokedex Card --- */
 .pokedex-card {
   background: var(--surface-color);
   border: 4px solid var(--border-color);
@@ -100,7 +100,7 @@
 .pokedex-table th { font-weight: 800; width: 35%; color: var(--accent-color); }
 .pokedex-table tr:last-child th, .pokedex-table tr:last-child td { border-bottom: none; }
 
-/* --- Commentaires --- */
+/* --- Comments --- */
 .comments-section { margin-top: 2rem; }
 .comment-card {
   background: var(--bg-color);
@@ -115,7 +115,7 @@
 .comment-content { font-size: 0.95rem; }
 .comment-delete { display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--primary-color); font-weight: 700; }
 
-/* --- Formulaire commentaire --- */
+/* --- Comment form --- */
 .comment-form {
   background: var(--surface-color);
   border: 4px solid var(--border-color);

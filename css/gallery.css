@@ -1,8 +1,8 @@
 /* =====================================================
-   GRILLES ET ALBUMS (index.tpl, thumbnails.tpl)
+   GRIDS AND ALBUMS (index.tpl, thumbnails.tpl)
    ===================================================== */
 
-/* --- Grille des miniatures (Photos) --- */
+/* --- Thumbnails grid (Photos) --- */
 ul.thumbnails {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -44,7 +44,7 @@ ul.thumbnails .thumbName { display: block; font-weight: 800; font-size: 1.1rem; 
 .thumbMeta.fav { color: var(--secondary-color); }
 .thumb-select { padding: 0.3rem; text-align: center; }
 
-/* --- Grille d'albums (Catégories) --- */
+/* --- Albums grid (Categories) --- */
 .albums-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));

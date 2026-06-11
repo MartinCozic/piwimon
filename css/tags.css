@@ -1,5 +1,5 @@
 /* =====================================================
-   PAGE DES TAGS (tags.tpl)
+   TAGS PAGE (tags.tpl)
    ===================================================== */
 
 .tags-cloud {
@@ -40,7 +40,7 @@
   font-weight: 900;
 }
 
-/* Variations de tailles natives de Piwigo (selon le nombre de photos par tag) */
+/* Native Piwigo size variations (based on number of photos per tag) */
 .tag-level-1 { font-size: 0.9rem; }
 .tag-level-2 { font-size: 1rem; }
 .tag-level-3 { font-size: 1.15rem; }

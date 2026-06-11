@@ -34,7 +34,7 @@
             {if !empty($cat.DESCRIPTION)}
               {$cat.DESCRIPTION|strip_tags|truncate:100:'...'}
             {else}
-              Un mystérieux album sans description. Quels secrets s'y cachent ?
+              {'piwimon_empty_album_desc'|translate}
             {/if}
           </div>
         </div>

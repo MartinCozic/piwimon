@@ -15,6 +15,9 @@ $themeconf = array(
     'mime_icon_dir' => 'themes/default/icon/mimetypes/',
 );
 
+// Load theme translations
+load_language('theme.lang', dirname(__FILE__) . '/');
+
 if (function_exists('add_event_handler')) {
     add_event_handler('loc_begin_page_header', 'piwimon_global_vars');
 }
